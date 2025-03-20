@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "../../views/categories/Categories.css"; // Importamos el archivo CSS
 
 interface Categoria {
   id: number;
@@ -16,10 +17,9 @@ const Categories = () => {
     const fetchCategorias = async () => {
       try {
         const response = await axios.get<Categoria[]>("http://localhost:8080/categorias");
-        console.log(response.data); // Verifica la estructura de la respuesta
         setCategorias(response.data);
-      } catch (error) {
-        setError("Error al obtener las categorías");
+      } catch (error: any) {
+        setError(error.message || "Error al obtener las categorías");
       } finally {
         setLoading(false);
       }
@@ -28,29 +28,39 @@ const Categories = () => {
     fetchCategorias();
   }, []);
 
-  if (loading) return <p className="text-center text-gray-500 mt-5">Cargando categorías...</p>;
-  if (error) return <p className="text-center text-red-500 mt-5">{error}</p>;
+  if (loading) return <p className="loading">Cargando categorías...</p>;
+  if (error) return <p className="error">{error}</p>;
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h2 className="text-2xl font-semibold text-gray-800 text-center mb-4">Lista de Categorías</h2>
-      <div className="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-4">
-        <ul className="divide-y divide-gray-200">
+    <div className="categories-container">
+      <h2 className="title">Lista de Categorías</h2>
+      <div className="btn-container">
+      <a href="/home">
+      <button className="btn">Ir al inicio</button>
+      </a>
+      <a href="/users">
+      <button className="btn">Ir a Users</button>
+      </a>
+      <a href="/products">
+      <button className="btn">Ir a products</button>
+      </a>
+      </div>
+      <div className="category-list">
+        <ul>
           {categorias.map((categoria) => (
-            <li key={categoria.id} className="p-3 flex flex-col sm:flex-row sm:justify-between">
-              <div>
-                <strong className="text-gray-800">{categoria.nombre}</strong>
-                <p className="text-gray-500 text-sm">Productos:</p>
-                <ul className="pl-4">
-                  {/* Verificación de productos */}
-                  {categoria.productos && Array.isArray(categoria.productos) && categoria.productos.length > 0 ? (
+            <li key={categoria.id} className="category-item">
+              <div className="category-info">
+                <strong>{categoria.nombre}</strong>
+                <p>Productos:</p>
+                <ul>
+                  {categoria.productos && categoria.productos.length > 0 ? (
                     categoria.productos.map((producto) => (
-                      <li key={producto.id} className="text-gray-600 text-sm">
+                      <li key={producto.id} className="product-info">
                         <strong>{producto.nombre}</strong> - {producto.descripcion} - ${producto.precio}
                       </li>
                     ))
                   ) : (
-                    <li className="text-gray-600 text-sm">No hay productos disponibles</li>
+                    <li className="product-info">No hay productos disponibles</li>
                   )}
                 </ul>
               </div>

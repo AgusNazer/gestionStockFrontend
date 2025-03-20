@@ -7,6 +7,7 @@ import Categories from "./views/categories/Categories";
 
 const App = () => {
   return (
+    <div className="app-background">
     <Router>
       <Navbar />
       <Routes>
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/categories" element={<Categories />} />
       </Routes>
     </Router>
+    </div>
   );
 };
 

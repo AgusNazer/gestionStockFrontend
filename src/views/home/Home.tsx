@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "../../index.css";
 
+
 const Home = () => {
   const [fechaActual, setFechaActual] = useState("");
 
@@ -26,7 +27,7 @@ const Home = () => {
       </header>
 
       {/* Contenido principal */}
-      <div className="container">
+      {/* <div className="container">
         <h1 className="title">Tu gestión de stock</h1>
         <nav className="nav">
           <ul>
@@ -41,7 +42,7 @@ const Home = () => {
             </li>
           </ul>
         </nav>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,0 +1,127 @@
+/* PRODUCTS - Fondo oscuro y texto blanco */
+.products-container {
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Aseguramos que ocupe todo el ancho */
+    box-sizing: border-box; /* Incluimos padding en el cálculo del ancho */
+  }
+  
+  /* Título principal */
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Contenedor de la lista - Se asegura que ocupe todo el ancho disponible */
+  .product-list {
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo más claro */
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%; /* Ocupará todo el ancho */
+    max-width: 100%; /* No se limitará en pantallas grandes */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Estilos de cada producto - Espaciado adecuado y alineación */
+  .product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Último producto sin borde inferior */
+  .product-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Información del producto */
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+  }
+  
+  .product-info strong {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .product-info p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin: 5px 0;
+  }
+  
+  /* Precio del producto - Está alineado al lado */
+  .product-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffcc00; /* Amarillo para destacar el precio */
+    text-align: right;
+  }
+  
+  /* Mensajes de carga y error */
+  .loading,
+  .error {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* 📱 Responsive: Cambia a Grid en pantallas grandes */
+  @media (min-width: 768px) {
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+      gap: 20px;
+    }
+  
+    .product-item {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-radius: 10px;
+      border-bottom: none;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  
+    .product-info strong {
+      font-size: 24px;
+    }
+  
+    .product-info p {
+      font-size: 18px;
+    }
+  
+    .product-price {
+      font-size: 22px;
+    }
+  }
+  
+  /* 📱 Responsive: Ajustes para móviles */
+  @media (max-width: 767px) {
+    .product-list {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .product-item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+    }
+  }

@@ -1,5 +1,29 @@
 # React + TypeScript + Vite
 
+Este proyecto es una aplicación creada con React JS y Tailwind CSS, diseñada para ofrecer una experiencia interactiva y dinámica. Para comenzar con el desarrollo o despliegue del proyecto, sigue las instrucciones a continuación.
+
+Requisitos
+Antes de empezar, asegúrate de tener instalados los siguientes programas en tu máquina:
+
+Node.js (LTS recomendado) - Instalar Node.js
+npm - Viene preinstalado con Node.js
+Instrucciones para comenzar
+1. Clonar el repositorio
+Primero, clona este repositorio en tu máquina local usando el siguiente comando:
+
+bash
+Copiar
+Editar
+git clone https://github.com/tu_usuario/tu_repositorio.git
+2. Instalar dependencias
+Dentro de la carpeta del proyecto, instala las dependencias necesarias utilizando npm:
+
+bash
+Copiar
+Editar
+cd tu_repositorio
+npm install
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

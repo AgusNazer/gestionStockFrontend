@@ -1,7 +1,8 @@
 # React + TypeScript + Vite
 
 Este proyecto es una aplicación creada con React JS y Tailwind CSS, diseñada para ofrecer una experiencia interactiva y dinámica. Para comenzar con el desarrollo o despliegue del proyecto, sigue las instrucciones a continuación.
-<img src="https://raw.githubusercontent.com/AgusNazer/gestionStockFrontend/main/assets/home.png" alt="Categorías" />
+<img src="https://raw.githubusercontent.com/AgusNazer/gestionStockFrontend/main/public/home.png" alt="home" />
+
 
 Requisitos
 Antes de empezar, asegúrate de tener instalados los siguientes programas en tu máquina:

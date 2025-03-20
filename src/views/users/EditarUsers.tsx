@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const FormularioEditarUsuario = ({ usuario, onGuardar, onCancelar }) => {
   const [usuarioEditado, setUsuarioEditado] = useState(usuario);
-
+ //corregir
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setUsuarioEditado({
